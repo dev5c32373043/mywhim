@@ -14,7 +14,7 @@ import { getProducts, filter } from '../api/ProductList';
 export function updateQuery(params) {
   const oldQuery = queryString.parse(window.location.search, { arrayFormat: 'bracket' });
   if (params.category) {
-    if (!Array.isArray(oldQuery.categories)) oldQuery.categories = [];
+    oldQuery.categories = oldQuery.categories || [];
     if (oldQuery.categories.includes(params.category)) {
       oldQuery.categories = oldQuery.categories.filter(c => c !== params.category);
     } else {
@@ -26,17 +26,13 @@ export function updateQuery(params) {
       category: undefined,
     });
   }
-  if (!params.title) {
-    Object.assign(params, { title: undefined });
-  }
-  if (params.location === 'all') {
-    Object.assign(params, { location: undefined });
-  }
-  if (!Object.keys(params).length) {
-    Object.assign(params, { title: undefined, location: undefined });
-  }
-  const q = Object.assign({}, oldQuery, params);
+  ['title', 'location'].forEach((attr) => {
+    if (!params[attr] || (attr === 'location' && params[attr] === 'all')) {
+      Object.assign(params, { [attr]: undefined });
+    }
+  });
   const result = {};
+  const q = Object.assign({}, oldQuery, params);
   Object.keys(q).forEach((attr) => {
     if (q[attr] && q[attr].length) result[attr] = q[attr];
   });

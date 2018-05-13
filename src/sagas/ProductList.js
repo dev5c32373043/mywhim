@@ -26,6 +26,9 @@ export function updateQuery(params) {
       category: undefined,
     });
   }
+  if (!params.title) {
+    Object.assign(params, { title: undefined });
+  }
   if (params.location === 'all') {
     Object.assign(params, { location: undefined });
   }

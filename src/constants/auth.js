@@ -1,0 +1,6 @@
+export const TOGGLE_DIALOG = 'TOGGLE_DIALOG';
+export const LOGIN = 'LOGIN';
+export const REGISTER = 'REGISTER';
+export const AUTHENTICATE = 'AUTHENTICATE';
+export const AUTHENTICATED = 'AUTHENTICATED';
+export const AUTHENTICATE_FAILED = 'AUTHENTICATE_FAILED';

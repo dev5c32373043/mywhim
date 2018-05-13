@@ -1,0 +1,21 @@
+@import 'categories';
+@import 'products';
+@import 'appBar';
+@import 'forms';
+@import 'scrollbar';
+@import 'notFoundPage';
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

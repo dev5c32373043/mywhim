@@ -1,0 +1,10 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75%;
+  margin: 1%;
+  @media only screen and (max-width: 768px) {
+    width: auto;
+  }
+}

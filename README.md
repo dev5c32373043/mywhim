@@ -1,5 +1,7 @@
 # MyWhim
 
+[![Build Status](https://travis-ci.org/pickyDude/mywhim.svg?branch=master)](https://travis-ci.org/pickyDude/mywhim)
+
 ### Just something
 
 ## Getting Started
